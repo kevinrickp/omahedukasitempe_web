@@ -29,7 +29,7 @@
     </section>
 
     {{-- Misi Kami --}}
-    <section class="py-12">
+    <section class="py-5">
       <h2 class="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-4 animate-fade-in">Misi Kami</h2>
       <div class="bg-white p-8 rounded-2xl shadow-lg border border-amber-100 animate-fade-in delay-200">
         <p class="text-lg sm:text-xl text-gray-700 leading-relaxed text-justify mb-4">
@@ -41,15 +41,9 @@
       </div>
     </section>
 
-    {{-- CTA --}}
-    <section class="text-center">
-      <a href="{{ route('edukasi') }}" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-10 py-5 rounded-full text-lg sm:text-xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-amber-300 animate-fade-in delay-300">
-        Jelajahi Edukasi Tempe Sekarang! &rarr;
-      </a>
-    </section>
-
+  
     {{-- Produk Unggulan --}}
-    <section class="py-12">
+    <section class="py-3">
       <h2 class="text-3xl font-bold mb-6 border-b-4 border-amber-400 inline-block pb-1">Produk Unggulan</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         @foreach($produk as $p)
@@ -65,8 +59,15 @@
       </div>
     </section>
 
+    {{-- CTA --}}
+    <section class="text-center">
+      <a href="{{ route('edukasi') }}" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-semibold px-10 py-5 rounded-full text-lg sm:text-xl shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-amber-300 animate-fade-in delay-300">
+        Jelajahi Edukasi Tempe Sekarang! &rarr;
+      </a>
+    </section>
+
     {{-- Program Edukasi --}}
-    <section class="py-12">
+    <section class="py-3">
       <h2 class="text-3xl font-bold mb-6 border-b-4 border-blue-600 inline-block pb-1">Program Edukasi</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         @foreach($edukasi as $e)
@@ -83,7 +84,7 @@
     </section>
 
     {{-- Testimoni --}}
-    <section class="py-12">
+    <section class="py-3">
       <h2 class="text-3xl font-bold mb-6 border-b-4 border-rose-500 inline-block pb-1">Testimoni Pelanggan</h2>
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
@@ -111,7 +112,7 @@
     </section>
 
     {{-- Lokasi Kami --}}
-    <section class="py-12">
+    <section class="py-3">
       <h2 class="text-3xl font-bold mb-6 border-b-4 border-gray-500 inline-block pb-1">Lokasi Kami</h2>
       <div class="rounded-lg overflow-hidden shadow-lg">
         <iframe

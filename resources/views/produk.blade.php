@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="text-2xl font-bold mb-6">Produk Kami</h1>
+    <h1 class="text-5xl font-extrabold mb-8 text-amber-600 tracking-tight text-center">Produk Kami</h1>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         @foreach($produks as $produk)
             <div class="bg-white p-4 rounded shadow">

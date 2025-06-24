@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1 class="text-2xl font-bold mb-6">Galeri</h1>
+    <h1 class="text-5xl font-extrabold mb-8 text-amber-600 tracking-tight text-center">Galeri</h1>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         @foreach($galeris as $g)
             <div>
