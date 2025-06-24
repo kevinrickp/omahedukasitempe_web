@@ -22,6 +22,9 @@
             <a href="{{ route('admin.edukasi.index') }}" class="block px-4 py-2 rounded hover:bg-gray-200 {{ request()->routeIs('admin.edukasi.*') ? 'bg-gray-200 font-semibold' : '' }}">
                 Edukasi
             </a>
+            <a href="{{ route('admin.workshop.index') }}" class="block px-4 py-2 rounded hover:bg-gray-200 {{ request()->routeIs('admin.workshop.*') ? 'bg-gray-200 font-semibold' : '' }}">
+                Workshop
+            </a>
             <a href="{{ route('admin.galeri.index') }}" class="block px-4 py-2 rounded hover:bg-gray-200 {{ request()->routeIs('admin.galeri.*') ? 'bg-gray-200 font-semibold' : '' }}">
                 Galeri
             </a>

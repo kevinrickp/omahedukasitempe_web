@@ -5,11 +5,13 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\EdukasiController;
 use App\Http\Controllers\GaleriController;
+use App\Http\Controllers\WorkshopController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Admin\ProdukAdminController;
 use App\Http\Controllers\Admin\EdukasiAdminController;
 use App\Http\Controllers\Admin\GaleriAdminController;
+use App\Http\Controllers\Admin\WorkshopAdminController;
 use App\Http\Controllers\Admin\AccountController;
 
 // ===========================
@@ -19,6 +21,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/produk', [ProdukController::class, 'index'])->name('produk');
 Route::get('/edukasi', [EdukasiController::class, 'index'])->name('edukasi');
 Route::get('/galeri', [GaleriController::class, 'index'])->name('galeri');
+Route::get('/workshop', [WorkshopController::class, 'index'])->name('workshop');
 
 // ===========================
 // Autentikasi (tanpa register)
@@ -50,6 +53,9 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('/galeri', [GaleriAdminController::class, 'index'])->name('galeri.index');
     Route::post('/galeri', [GaleriAdminController::class, 'store'])->name('galeri.store');
     Route::delete('/galeri/{galeri}', [GaleriAdminController::class, 'destroy'])->name('galeri.destroy');
+
+    // CRUD Workshop
+    Route::resource('workshop', WorkshopAdminController::class);
 
     // Pengaturan Akun
     Route::get('/password', [AccountController::class, 'editPassword'])->name('password.change');
