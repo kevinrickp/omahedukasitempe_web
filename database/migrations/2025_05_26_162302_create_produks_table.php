@@ -17,6 +17,8 @@ return new class extends Migration
             $table->text('deskripsi');
             $table->integer('harga');
             $table->string('gambar'); // path gambar produk
+            $table->timestamps();
+
         });
     }
 
