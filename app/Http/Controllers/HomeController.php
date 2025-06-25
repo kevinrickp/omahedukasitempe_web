@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Produk;
 use App\Models\Edukasi;
+use App\Models\Testimoni;
+
 
 class HomeController extends Controller
 {
@@ -11,7 +13,9 @@ class HomeController extends Controller
     {
         $produk = Produk::limit(3)->get();
         $edukasi = Edukasi::limit(3)->get();
-        return view('home', compact('produk', 'edukasi'));
-    }
+        $testimoni = Testimoni::all();
+    
+        return view('home', compact('produk', 'edukasi', 'testimoni'));
+    }    
 }
 

@@ -28,6 +28,10 @@
             <a href="{{ route('admin.galeri.index') }}" class="block px-4 py-2 rounded hover:bg-gray-200 {{ request()->routeIs('admin.galeri.*') ? 'bg-gray-200 font-semibold' : '' }}">
                 Galeri
             </a>
+            {{-- Tambahan Baru: Testimoni --}}
+            <a href="{{ route('admin.testimoni.index') }}" class="block px-4 py-2 rounded hover:bg-gray-200 {{ request()->routeIs('admin.testimoni.*') ? 'bg-gray-200 font-semibold' : '' }}">
+                Testimoni
+            </a>
             <form method="POST" action="{{ route('logout') }}" onsubmit="return confirm('Logout sekarang?')">
                 @csrf
                 <button class="w-full text-left px-4 py-2 text-red-500 hover:bg-red-100 rounded">Logout</button>

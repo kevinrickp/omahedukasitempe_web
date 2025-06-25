@@ -9,8 +9,62 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Inter', sans-serif; }
-  </style>
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out both;
+  }
+
+  .nav-link {
+    position: relative;
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 2px;
+    background-color: #f59e0b; /* amber-500 */
+    transition: all 0.4s ease;
+    transform: translateX(-50%);
+    border-radius: 9999px;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+
+  .nav-link.active {
+    color: #f59e0b; /* amber-500 */
+    font-weight: 600;
+  }
+
+  .mobile-link {
+    display: block;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+  }
+</style>
 </head>
 <body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
 
@@ -39,8 +93,8 @@
         <li><a href="/galeri" class="nav-link {{ Request::is('galeri*') ? 'active' : '' }}">Galeri</a></li>
       </ul>
 
-      {{-- Contact Button --}}
-      <a href="https://wa.me/6281216647993" target="_blank" rel="noopener noreferrer"
+            {{-- Contact Button --}}
+            <a href="https://wa.me/6281216647993" target="_blank" rel="noopener noreferrer"
         class="hidden md:inline-block bg-amber-500 text-white px-4 py-2 rounded-lg shadow hover:bg-amber-600 transition">
         Hubungi Kami
       </a>
@@ -61,7 +115,7 @@
   </nav>
 
   {{-- Konten Halaman --}}
-  <main class="flex-grow px-6 py-10">
+  <main class="flex-grow">
     @yield('content')
   </main>
 
@@ -110,37 +164,5 @@
   </footer>
 
   @stack('scripts')
-
-  <style>
-    .nav-link {
-      position: relative;
-      display: inline-block;
-      transition: color 0.3s;
-    }
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background-color: #f59e0b; /* amber-500 */
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s ease;
-    }
-    .nav-link:hover::after,
-    .nav-link.active::after {
-      transform: scaleX(1);
-    }
-    .nav-link.active {
-      color: #f59e0b; /* amber-500 */
-      font-weight: 600;
-    }
-    .mobile-link {
-      display: block;
-      padding: 0.5rem 0;
-    }
-  </style>
 </body>
 </html>

@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <h1 class="text-5xl font-extrabold mb-8 text-amber-600 tracking-tight text-center">
-        Program Edukasi
-    </h1>
+<h1 class="text-5xl sm:text-6xl font-extrabold mb-10 text-center text-amber-700 drop-shadow-md tracking-wide animate-fade-in-up">
+    Edukasi
+</h1>
 
     {{-- Bagian Penjelasan Program Edukasi yang Lebih Baik --}}
 <div class="relative bg-gradient-to-br from-amber-50 to-orange-100 rounded-3xl p-12 mb-16 shadow-2xl max-w-5xl mx-auto overflow-hidden border border-amber-200">

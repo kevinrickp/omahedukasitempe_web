@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\EdukasiAdminController;
 use App\Http\Controllers\Admin\GaleriAdminController;
 use App\Http\Controllers\Admin\WorkshopAdminController;
 use App\Http\Controllers\Admin\AccountController;
+use App\Http\Controllers\Admin\TestimoniController;
 
 // ===========================
 // Halaman Publik
@@ -64,4 +65,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     // Tambah Admin Baru
     Route::get('/create-admin', [AccountController::class, 'createAdmin'])->name('create');
     Route::post('/create-admin', [AccountController::class, 'storeAdmin'])->name('store');
+
+    // CRUD Testimoni
+    Route::resource('testimoni', TestimoniController::class);
 });
