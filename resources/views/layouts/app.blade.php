@@ -72,7 +72,7 @@
   <nav x-data="{ open: false }" class="bg-white shadow-sm sticky top-0 z-50 transition duration-300">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
       <a href="/" class="text-2xl font-extrabold text-amber-500 hover:text-amber-600 transition duration-300">
-         Omah Tempe
+         OmahEdukasiTempe
       </a>
 
       {{-- Hamburger Menu --}}

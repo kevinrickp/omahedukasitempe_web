@@ -5,28 +5,35 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-12 space-y-20">
 
     {{-- Hero Section --}}
-    <section
-      class="bg-white rounded-3xl shadow-xl overflow-hidden transition duration-500 hover:scale-[1.01] hover:shadow-2xl">
-      <div class="grid md:grid-cols-2 gap-10 items-center p-8 md:p-14">
-      <div class="order-2 md:order-1 space-y-6 animate-fade-in-up">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
-        Selamat Datang di <br><span class="text-amber-600">Omah Edukasi Tempe</span>
-        </h1>
-        <p class="text-lg sm:text-xl text-gray-700 text-justify">
+<section class="bg-white rounded-3xl shadow-xl overflow-hidden transition duration-500 hover:scale-[1.01] hover:shadow-2xl">
+  <div class="grid md:grid-cols-2 gap-10 items-center p-8 md:p-14">
+    
+    {{-- Left: Teks --}}
+    <div class="order-2 md:order-1 space-y-6 animate-fade-in-up">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
+        Selamat Datang di <br>
+        <span class="text-amber-600">Omah Edukasi Tempe</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-700 text-justify">
         <strong>Desa Parerejo</strong>, Kecamatan Purwodadi, Kabupaten Pasuruan telah lama dikenal sebagai sentra
         penghasil tempe tradisional berkualitas tinggi.
-        </p>
-        <p class="text-lg sm:text-xl text-gray-700 text-justify">
+      </p>
+      <p class="text-lg sm:text-xl text-gray-700 text-justify">
         Dalam menghadapi tantangan zaman, <strong>Mukhamad Irfan</strong> hadir dengan inovasi tempe premium
         <strong>"Zico"</strong> yang menggabungkan kearifan lokal dan teknologi modern.
-        </p>
+      </p>
+    </div>
+
+    {{-- Right: Gambar --}}
+    <div class="order-1 md:order-2 flex justify-center animate-fade-in-up delay-200">
+      <div class="w-full max-w-md rounded-2xl ring-4 ring-amber-200 shadow-lg overflow-hidden transform rotate-3 hover:rotate-0 transition-transform duration-300">
+        <img src="{{ asset('storage/home/ilustrasitempe.jpg') }}" alt="Ilustrasi Tempe" class="w-full h-auto object-cover">
       </div>
-      <div class="order-1 md:order-2 flex justify-center animate-fade-in-up delay-200">
-        <img src="{{ asset('storage/ilustrasitempe.jpg') }}" alt="Ilustrasi Tempe"
-        class="w-full max-w-md h-auto rounded-2xl shadow-lg ring-4 ring-amber-200 object-cover transform rotate-3 hover:rotate-0 transition-transform duration-300">
-      </div>
-      </div>
-    </section>
+    </div>
+
+  </div>
+</section>
+
 
     {{-- Misi Kami --}}
     <section class="space-y-6 text-center">
@@ -98,24 +105,32 @@
 
     <section>
       <h2 class="section-heading text-4xl sm:text-5xl font-extrabold tracking-tight text-rose-500 text-center">
+     
       Testimoni Pelanggan
       </h2>
       <div class="swiper mySwiper mt-6">
-      <div class="swiper-wrapper">
-        @foreach($testimoni as $t)
-      <div
-      class="swiper-slide bg-white rounded-lg shadow-md p-6 max-w-lg mx-auto text-center min-h-full flex flex-col justify-between transition duration-300 transform hover:scale-105 hover:shadow-xl">
-      <p class="text-gray-700 italic mb-4 flex-grow">"{{ $t['pesan'] }}"</p>
-      <div>
-        <h4 class="text-lg font-semibold">{{ $t['nama'] }}</h4>
-        <p class="text-sm text-gray-500">{{ $t['jabatan'] }}</p>
+  <div class="swiper-wrapper">
+    @foreach($testimoni as $t)
+      <div class="swiper-slide">
+        <div class="bg-white rounded-lg shadow-md p-6 max-w-lg w-full mx-auto 
+                    h-[280px] flex items-center justify-center text-center transition 
+                    duration-300 transform hover:scale-105 hover:shadow-xl">
+          <div class="flex flex-col items-center justify-center gap-4">
+            <p class="text-gray-700 italic">"{{ $t['pesan'] }}"</p>
+            <div>
+              <h4 class="text-lg font-semibold">{{ $t['nama'] }}</h4>
+              <p class="text-sm text-gray-500">{{ $t['jabatan'] }}</p>
+            </div>
+          </div>
+        </div>
       </div>
-      </div>
-      @endforeach
-      </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-      </div>
+    @endforeach
+  </div>
+
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+
     </section>
 
     {{-- Lokasi --}}
