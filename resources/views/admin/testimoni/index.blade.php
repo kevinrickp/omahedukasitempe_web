@@ -1,41 +1,62 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="p-6">
-  <h1 class="text-2xl font-bold mb-4">Daftar Testimoni</h1>
-  <a href="{{ route('admin.testimoni.create') }}" class="bg-amber-500 text-white px-4 py-2 rounded mb-4 inline-block">Tambah Testimoni</a>
+<div class="container mx-auto p-6">
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">Daftar Testimoni</h1>
 
-  @if(session('success'))
-    <div class="bg-green-100 text-green-800 px-4 py-2 rounded mb-4">{{ session('success') }}</div>
-  @endif
+    @if(session('success'))
+    <div class="mb-4 px-4 py-2 rounded bg-green-100 text-green-800 border border-green-300">
+        {{ session('success') }}
+    </div>
+    @endif
 
-  <table class="w-full bg-white border rounded shadow">
-    <thead>
-      <tr class="bg-gray-100">
-        <th class="p-3 text-left">Nama</th>
-        <th class="p-3 text-left">Jabatan</th>
-        <th class="p-3 text-left">Pesan</th>
-        <th class="p-3 text-center">Aksi</th>
-      </tr>
-    </thead>
-    <tbody>
-      @foreach ($testimonis as $t)
-      <tr class="border-t">
-        <td class="p-3">{{ $t->nama }}</td>
-        <td class="p-3">{{ $t->jabatan }}</td>
-        <td class="p-3">{{ Str::limit($t->pesan, 50) }}</td>
-        <td class="p-3 text-center space-x-2">
-          <a href="{{ route('admin.testimoni.edit', $t) }}" class="text-blue-500 hover:underline">Edit</a>
-          <form action="{{ route('admin.testimoni.destroy', $t) }}" method="POST" class="inline" onsubmit="return confirm('Yakin ingin hapus?')">
-            @csrf @method('DELETE')
-            <button class="text-red-500 hover:underline">Hapus</button>
-          </form>
-        </td>
-      </tr>
-      @endforeach
-    </tbody>
-  </table>
+    <div class="mb-6">
+        <a href="{{ route('admin.testimoni.create') }}"
+            class="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2 px-4 rounded shadow transition">
+            + Tambah Testimoni
+        </a>
+    </div>
 
-  <div class="mt-4">{{ $testimonis->links() }}</div>
+    <div class="overflow-x-auto bg-white shadow rounded-lg">
+        <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-blue-900 text-white text-left">
+                <tr>
+                    <th class="p-4 font-semibold">Nama</th>
+                    <th class="p-4 font-semibold">Jabatan</th>
+                    <th class="p-4 font-semibold">Pesan</th>
+                    <th class="p-4 font-semibold text-center">Aksi</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+                @foreach ($testimonis as $t)
+                <tr class="hover:bg-gray-50 transition">
+                    <td class="p-4 align-top">{{ $t->nama }}</td>
+                    <td class="p-4 align-top">{{ $t->jabatan }}</td>
+                    <td class="p-4 align-top max-w-sm truncate" title="{{ $t->pesan }}">
+                        {{ $t->pesan }}
+                    </td>
+                    <td class="p-4 text-center align-top">
+                        <a href="{{ route('admin.testimoni.edit', $t) }}"
+                            class="text-blue-600 hover:underline font-semibold mr-3">
+                            Edit
+                        </a>
+                        <form action="{{ route('admin.testimoni.destroy', $t) }}"
+                            method="POST" class="inline-block" onsubmit="return confirm('Yakin ingin hapus?')">
+                            @csrf @method('DELETE')
+                            <button type="submit"
+                                class="text-red-600 hover:underline font-semibold">
+                                Hapus
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+
+        <div class="mt-6">
+            {{ $testimonis->links() }}
+        </div>
+    </div>
 </div>
 @endsection

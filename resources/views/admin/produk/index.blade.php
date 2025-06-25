@@ -1,41 +1,69 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container mx-auto p-4">
-    <h1 class="text-2xl font-bold mb-4">Manajemen Produk</h1>
-    <a href="{{ route('admin.produk.create') }}" class="bg-blue-500 text-white px-4 py-2 rounded">Tambah Produk</a>
+<div class="container mx-auto p-6">
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">Manajemen Produk</h1>
 
     @if(session('success'))
-        <p class="text-green-500 mt-2">{{ session('success') }}</p>
+    <div class="mb-4 px-4 py-2 rounded bg-green-100 text-green-800 border border-green-300">
+        {{ session('success') }}
+    </div>
     @endif
 
-    <table class="w-full mt-4 border">
-        <thead>
-            <tr class="bg-gray-200">
-                <th class="p-2">Gambar</th>
-                <th class="p-2">Nama</th>
-                <th class="p-2">Deskripsi</th>
-                <th class="p-2">Harga</th>
-                <th class="p-2">Aksi</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($produks as $produk)
-                <tr class="border-t align-top">
-                    <td><img src="{{ asset('storage/' . $produk->gambar) }}" class="w-16 h-16 object-cover"></td>
-                    <td class="align-middle">{{ $produk->nama }}</td>
-                    <td class="align-middle max-w-xs truncate" title="{{ $produk->deskripsi }}">{{ $produk->deskripsi }}</td>  <!-- Deskripsi dengan tooltip -->
-                    <td class="align-middle">Rp{{ number_format($produk->harga) }}</td>
-                    <td class="align-middle">
-                        <a href="{{ route('admin.produk.edit', $produk) }}" class="text-blue-500">Edit</a>
-                        <form action="{{ route('admin.produk.destroy', $produk) }}" method="POST" class="inline">
+    <div class="mb-6">
+        <a href="{{ route('admin.produk.create') }}"
+            class="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2 px-4 rounded shadow transition">
+            + Tambah Produk
+        </a>
+    </div>
+
+    <div class="overflow-x-auto bg-white shadow rounded-lg">
+        <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-blue-900 text-white text-left">
+                <tr>
+                    <th class="p-4 font-semibold">Gambar</th>
+                    <th class="p-4 font-semibold">Nama</th>
+                    <th class="p-4 font-semibold">Deskripsi</th>
+                    <th class="p-4 font-semibold">Harga</th>
+                    <th class="p-4 font-semibold text-center">Aksi</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+                @forelse($produks as $produk)
+                <tr class="hover:bg-gray-50 transition">
+                    <td class="p-4">
+                        <img src="{{ asset('storage/' . $produk->gambar) }}"
+                            class="w-16 h-16 object-cover rounded border" alt="Gambar {{ $produk->nama }}">
+                    </td>
+                    <td class="p-4 align-top">{{ $produk->nama }}</td>
+                    <td class="p-4 align-top max-w-sm truncate" title="{{ $produk->deskripsi }}">
+                        {{ $produk->deskripsi }}
+                    </td>
+                    <td class="p-4 align-top font-medium text-gray-800">
+                        Rp{{ number_format($produk->harga, 0, ',', '.') }}
+                    </td>
+                    <td class="p-4 text-center align-top">
+                        <a href="{{ route('admin.produk.edit', $produk) }}"
+                            class="text-blue-600 hover:underline font-semibold mr-3">
+                            Edit
+                        </a>
+                        <form action="{{ route('admin.produk.destroy', $produk) }}"
+                            method="POST" class="inline-block" onsubmit="return confirm('Hapus produk ini?')">
                             @csrf @method('DELETE')
-                            <button class="text-red-500 ml-2" onclick="return confirm('Hapus produk ini?')">Hapus</button>
+                            <button type="submit"
+                                class="text-red-600 hover:underline font-semibold">
+                                Hapus
+                            </button>
                         </form>
                     </td>
                 </tr>
-            @endforeach
-        </tbody>
-    </table>
+                @empty
+                <tr>
+                    <td colspan="5" class="p-4 text-center text-gray-500">Belum ada produk.</td>
+                </tr>
+                @endforelse
+            </tbody>
+        </table>
+    </div>
 </div>
 @endsection
