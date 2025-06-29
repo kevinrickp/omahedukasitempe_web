@@ -94,12 +94,16 @@
       </ul>
 
             {{-- Contact Button --}}
-            <a href="https://wa.me/6281216647993" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/6281392007329" target="_blank" rel="noopener noreferrer"
         class="hidden md:inline-block bg-amber-500 text-white px-4 py-2 rounded-lg shadow hover:bg-amber-600 transition">
         Hubungi Kami
       </a>
-    </div>
 
+      <a href="https://www.instagram.com/omahdeukasitempe?igsh=bzgyMzF3MXdsNGM5" target="_blank" rel="noopener noreferrer"
+        class="hidden md:inline-block bg-amber-500 text-white px-4 py-2 rounded-lg shadow hover:bg-amber-600 transition">
+        Instagram
+      </a>
+    </div>
     {{-- Mobile Menu --}}
     <div x-show="open" x-transition class="md:hidden px-6 pb-4 space-y-2 bg-white shadow-inner">
       <a href="/" class="mobile-link {{ Request::is('/') ? 'text-amber-500' : '' }}">Beranda</a>
@@ -107,7 +111,7 @@
       <a href="/edukasi" class="mobile-link {{ Request::is('edukasi*') ? 'text-amber-500' : '' }}">Edukasi</a>
       <a href="/workshop" class="mobile-link {{ Request::is('workshop*') ? 'text-amber-500' : '' }}">Workshop</a>
       <a href="/galeri" class="mobile-link {{ Request::is('galeri*') ? 'text-amber-500' : '' }}">Galeri</a>
-      <a href="https://wa.me/6281216647993" target="_blank" rel="noopener noreferrer"
+      <a href="https://wa.me/6281392007329" target="_blank" rel="noopener noreferrer"
         class="block mt-2 bg-amber-500 text-white px-4 py-2 rounded-lg shadow hover:bg-amber-600 transition text-center">
         Hubungi Kami
       </a>
@@ -138,8 +142,8 @@
       </div>
       <div>
         <h3 class="text-lg font-bold text-amber-400 mb-3">Kontak</h3>
-        <p class="text-sm md:text-base">kevinrickypradana@gmail.com</p>
-        <p class="text-sm md:text-base">+62 812 1664 7993</p>
+        <p class="text-sm md:text-base">omahedukasitempe@gmail.com</p>
+        <p class="text-sm md:text-base">+6281392007329</p>
         <p class="text-sm md:text-base">Parerejo, Purwodadi, Pasuruan</p>
       </div>
       <div>
@@ -152,7 +156,7 @@
           </a>
           <a href="#" class="hover:text-amber-400 transition">
             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-              <path d="M12 2.04c-5.5 0-9.96 4.46-9.96 9.96 0 4.4 2.86 8.13 6.83 9.46.5.1.67-.22.67-.48v-1.7c-2.77.6-3.35-1.34-3.35-1.34-.45-1.14-1.1-1.44-1.1-1.44-.9-.61.07-.6.07-.6 1 .07 1.53 1.02 1.53 1.02.88 1.52 2.3 1.08 2.87.83.1-.63.34-1.08.61-1.33-2.21-.25-4.54-1.1-4.54-4.91 0-1.08.39-1.96 1.02-2.65-.1-.25-.45-1.27.1-2.64 0 0 .83-.27 2.75 1.02a9.48 9.48 0 015 0c1.92-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.02 1.57 1.02 2.65 0 3.82-2.33 4.66-4.55 4.9.35.3.66.9.66 1.82v2.7c0 .26.17.58.67.48a10.01 10.01 0 006.82-9.46C22 6.5 17.52 2.04 12 2.04z"></path>
+              <path d="https://www.instagram.com/omahdeukasitempe?igsh=bzgyMzF3MXdsNGM5"></path>
             </svg>
           </a>
         </div>
