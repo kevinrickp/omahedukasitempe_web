@@ -89,27 +89,37 @@
         <li><a href="/" class="nav-link {{ Request::is('/') ? 'active' : '' }}">Beranda</a></li>
         <li><a href="/produk" class="nav-link {{ Request::is('produk*') ? 'active' : '' }}">Produk</a></li>
         <li><a href="/edukasi" class="nav-link {{ Request::is('edukasi*') ? 'active' : '' }}">Edukasi</a></li>
-        <li><a href="/workshop" class="nav-link {{ Request::is('workshop*') ? 'active' : '' }}">Workshop</a></li>
+        <!-- <li><a href="/workshop" class="nav-link {{ Request::is('workshop*') ? 'active' : '' }}">Workshop</a></li> -->
         <li><a href="/galeri" class="nav-link {{ Request::is('galeri*') ? 'active' : '' }}">Galeri</a></li>
       </ul>
 
-            {{-- Contact Button --}}
-            <a href="https://wa.me/6281392007329" target="_blank" rel="noopener noreferrer"
-        class="hidden md:inline-block bg-amber-500 text-white px-4 py-2 rounded-lg shadow hover:bg-amber-600 transition">
-        Hubungi Kami
-      </a>
+           <!-- Contact Buttons Section -->
+<div class="flex gap-4">
 
-      <a href="https://www.instagram.com/omahdeukasitempe?igsh=bzgyMzF3MXdsNGM5" target="_blank" rel="noopener noreferrer"
-        class="hidden md:inline-block bg-amber-500 text-white px-4 py-2 rounded-lg shadow hover:bg-amber-600 transition">
-        Instagram
-      </a>
-    </div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- WhatsApp Button -->
+<a href="https://wa.me/6281392007329" target="_blank" rel="noopener noreferrer"
+  class="hidden md:inline-flex items-center gap-2 bg-amber-500 text-white px-4 py-2 rounded-lg shadow hover:bg-amber-600 transition">
+  <i class="fab fa-whatsapp text-lg"></i>
+  WhatsApp
+</a>
+
+<!-- Instagram Button -->
+<a href="https://www.instagram.com/omahdeukasitempe?igsh=bzgyMzF3MXdsNGM5" target="_blank" rel="noopener noreferrer"
+  class="hidden md:inline-flex items-center gap-2 bg-amber-500 text-white px-4 py-2 rounded-lg shadow hover:bg-amber-600 transition">
+  <i class="fab fa-instagram text-lg"></i>
+  Instagram
+</a>
+
+</div>
+
     {{-- Mobile Menu --}}
     <div x-show="open" x-transition class="md:hidden px-6 pb-4 space-y-2 bg-white shadow-inner">
       <a href="/" class="mobile-link {{ Request::is('/') ? 'text-amber-500' : '' }}">Beranda</a>
       <a href="/produk" class="mobile-link {{ Request::is('produk*') ? 'text-amber-500' : '' }}">Produk</a>
       <a href="/edukasi" class="mobile-link {{ Request::is('edukasi*') ? 'text-amber-500' : '' }}">Edukasi</a>
-      <a href="/workshop" class="mobile-link {{ Request::is('workshop*') ? 'text-amber-500' : '' }}">Workshop</a>
+      <!-- <a href="/workshop" class="mobile-link {{ Request::is('workshop*') ? 'text-amber-500' : '' }}">Workshop</a> -->
       <a href="/galeri" class="mobile-link {{ Request::is('galeri*') ? 'text-amber-500' : '' }}">Galeri</a>
       <a href="https://wa.me/6281392007329" target="_blank" rel="noopener noreferrer"
         class="block mt-2 bg-amber-500 text-white px-4 py-2 rounded-lg shadow hover:bg-amber-600 transition text-center">
@@ -124,48 +134,79 @@
   </main>
 
   {{-- Footer --}}
-  <footer class="bg-gray-900 text-gray-400">
-    <div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-      <div>
-        <h3 class="text-lg font-bold text-amber-400 mb-3">Tentang Kami</h3>
-        <p class="text-sm md:text-base">Kami adalah pusat edukasi pembuatan tempe sekaligus produsen produk tempe berkualitas tinggi dari Pasuruan.</p>
-      </div>
-      <div>
-        <h3 class="text-lg font-bold text-amber-400 mb-3">Navigasi</h3>
-        <ul class="text-sm md:text-base space-y-2">
-          <li><a href="/" class="hover:text-amber-300">Beranda</a></li>
-          <li><a href="/produk" class="hover:text-amber-300">Produk</a></li>
-          <li><a href="/edukasi" class="hover:text-amber-300">Edukasi</a></li>
-          <li><a href="/workshop" class="hover:text-amber-300">Workshop</a></li>
-          <li><a href="/galeri" class="hover:text-amber-300">Galeri</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="text-lg font-bold text-amber-400 mb-3">Kontak</h3>
-        <p class="text-sm md:text-base">omahedukasitempe@gmail.com</p>
-        <p class="text-sm md:text-base">+6281392007329</p>
-        <p class="text-sm md:text-base">Parerejo, Purwodadi, Pasuruan</p>
-      </div>
-      <div>
-        <h3 class="text-lg font-bold text-amber-400 mb-3">Ikuti Kami</h3>
-        <div class="flex space-x-4 mt-2">
-          <a href="#" class="hover:text-amber-400 transition">
-            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-              <path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.27 4.27 0 001.88-2.36 8.27 8.27 0 01-2.64 1 4.15 4.15 0 00-7.16 3.78A11.75 11.75 0 013 4.6a4.15 4.15 0 001.28 5.53 4.07 4.07 0 01-1.88-.52v.05a4.16 4.16 0 003.33 4.07 4.26 4.26 0 01-1.87.07 4.17 4.17 0 003.89 2.88A8.33 8.33 0 012 19.54a11.74 11.74 0 006.29 1.84c7.55 0 11.68-6.26 11.68-11.68 0-.18-.01-.35-.02-.53A8.33 8.33 0 0024 5.56a8.13 8.13 0 01-2.34.64 4.17 4.17 0 001.82-2.3"></path>
-            </svg>
-          </a>
-          <a href="#" class="hover:text-amber-400 transition">
-            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-              <path d="https://www.instagram.com/omahdeukasitempe?igsh=bzgyMzF3MXdsNGM5"></path>
-            </svg>
-          </a>
-        </div>
+<footer class="bg-gray-900 text-gray-400">
+  <div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+
+    <!-- Tentang Kami -->
+    <div>
+      <h3 class="text-lg font-bold text-amber-400 mb-3">Tentang Kami</h3>
+      <p class="text-sm md:text-base">
+        Kami adalah pusat edukasi pembuatan tempe sekaligus produsen produk tempe berkualitas tinggi dari Pasuruan.
+      </p>
+    </div>
+
+    <!-- Navigasi -->
+    <div>
+      <h3 class="text-lg font-bold text-amber-400 mb-3">Navigasi</h3>
+      <ul class="text-sm md:text-base space-y-2">
+        <li><a href="/" class="hover:text-amber-300">Beranda</a></li>
+        <li><a href="/produk" class="hover:text-amber-300">Produk</a></li>
+        <li><a href="/edukasi" class="hover:text-amber-300">Edukasi</a></li>
+        {{-- <li><a href="/workshop" class="hover:text-amber-300">Workshop</a></li> --}}
+        <li><a href="/galeri" class="hover:text-amber-300">Galeri</a></li>
+      </ul>
+    </div>
+
+<!-- Kontak -->
+<div>
+  <h3 class="text-lg font-bold text-amber-400 mb-3">Kontak</h3>
+  <p class="text-sm md:text-base">
+    <a href="mailto:omahedukasitempe@gmail.com" class="hover:text-amber-300 transition">
+      omahedukasitempe@gmail.com
+    </a>
+  </p>
+  <p class="text-sm md:text-base">
+    <a href="https://wa.me/6281392007329" target="_blank" class="hover:text-amber-300 transition">
+      +6281392007329
+    </a>
+  </p>
+  <p class="text-sm md:text-base">
+    Parerejo, Purwodadi, Pasuruan
+  </p>
+</div>
+
+    <!-- Ikuti Kami -->
+    <div>
+      <h3 class="text-lg font-bold text-amber-400 mb-3">Ikuti Kami</h3>
+      <div class="flex space-x-4 mt-2">
+
+        <!-- Facebook -->
+        <a href="https://web.facebook.com/profile.php?id=100088405001249&mibextid=ZbWKwL" target="_blank"
+          class="hover:text-amber-400 transition">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path
+              d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 5 3.66 9.13 8.44 9.88v-6.99H7.9v-2.89h2.54V9.82c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.77l-.44 2.89h-2.33V22C18.34 21.13 22 17 22 12z" />
+          </svg>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/omahdeukasitempe?igsh=bzgyMzF3MXdsNGM5" target="_blank"
+          class="hover:text-amber-400 transition">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path
+              d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm8.75 2a.75.75 0 0 1 .75.75v1a.75.75 0 0 1-1.5 0v-1a.75.75 0 0 1 .75-.75zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z" />
+          </svg>
+        </a>
+
       </div>
     </div>
-    <div class="text-center text-sm text-gray-600 py-4 border-t border-gray-700">
-      &copy; {{ date('Y') }} Omah Edukasi Tempe. All rights reserved.
-    </div>
-  </footer>
+  </div>
+
+  <!-- Copyright -->
+  <div class="text-center text-sm text-gray-600 py-4 border-t border-gray-700">
+    &copy; {{ date('Y') }} Omah Edukasi Tempe. All rights reserved.
+  </div>
+</footer>
 
   @stack('scripts')
 </body>

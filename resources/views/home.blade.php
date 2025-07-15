@@ -8,21 +8,38 @@
 <section class="bg-white rounded-3xl shadow-xl overflow-hidden transition duration-500 hover:scale-[1.01] hover:shadow-2xl">
   <div class="grid md:grid-cols-2 gap-10 items-center p-8 md:p-14">
     
-    {{-- Left: Teks --}}
-    <div class="order-2 md:order-1 space-y-6 animate-fade-in-up">
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
-        Selamat Datang di <br>
-        <span class="text-amber-600">Omah Edukasi Tempe</span>
-      </h1>
-      <p class="text-lg sm:text-xl text-gray-700 text-justify">
-        <strong>Desa Parerejo</strong>, Kecamatan Purwodadi, Kabupaten Pasuruan telah lama dikenal sebagai sentra
-        penghasil tempe tradisional berkualitas tinggi.
-      </p>
-      <p class="text-lg sm:text-xl text-gray-700 text-justify">
-        Dalam menghadapi tantangan zaman, <strong>Mukhamad Irfan</strong> hadir dengan inovasi tempe premium
-        <strong>"Zico"</strong> yang menggabungkan kearifan lokal dan teknologi modern.
-      </p>
-    </div>
+  {{-- Left: Teks --}}
+<div class="order-2 md:order-1 space-y-6 animate-fade-in-up">
+  <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
+    Selamat Datang di <br>
+    <span class="text-amber-600">Omah Edukasi Tempe</span>
+  </h1>
+
+  <p class="text-lg sm:text-xl text-gray-700 text-justify">
+    <strong>Desa Parerejo</strong>, Kecamatan Purwodadi, Kabupaten Pasuruan telah lama dikenal sebagai sentra
+    produksi tempe tradisional berkualitas tinggi di Jawa Timur.
+  </p>
+
+  <p class="text-lg sm:text-xl text-gray-700 text-justify">
+    Menjawab tantangan zaman, <strong>Mukhamad Irfan</strong> menghadirkan inovasi melalui tempe premium
+    <strong>"Zico"</strong>, yang memadukan kearifan lokal dengan pendekatan produksi modern.
+  </p>
+
+  <div class="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-xl shadow-sm text-gray-800 text-justify space-y-3">
+    <p class="text-base sm:text-lg">
+      Dengan kapasitas produksi mencapai <strong>80 kg tempe per hari</strong> atau setara dengan <strong>300 porsi</strong>,
+      Omah Edukasi Tempe tumbuh menjadi pelaku UMKM yang produktif dan berdaya saing tinggi.
+    </p>
+    <p class="text-base sm:text-lg">
+      Jangkauan distribusi kami telah meluas ke berbagai wilayah seperti <strong>Mojokerto, Probolinggo, Surabaya</strong>
+      (khususnya saat bulan Ramadan), <strong>Semarang</strong>, dan <strong>Gresik</strong>, menjangkau rumah makan dan kafe-kafe lokal.
+    </p>
+    <p class="text-base sm:text-lg">
+      Produk tempe kami juga tersedia di <strong>pusat oleh-oleh Masjid Cheng Ho</strong>, serta sejumlah <strong>kafe di kawasan
+      Prigen dan Sringingi Wetan</strong>, memperkuat posisi kami sebagai produsen tempe terpercaya di pasar regional.
+    </p>
+  </div>
+</div>
 
     {{-- Right: Gambar --}}
     <div class="order-1 md:order-2 flex justify-center animate-fade-in-up delay-200">
@@ -50,7 +67,7 @@
         Tempat ini menjadi saksi perpaduan <strong>tradisi dan inovasi</strong>, serta komitmen terhadap
         <strong>kelestarian budaya</strong> dan <strong>ekonomi lokal</strong>.
       </p>
-      </div>
+      </div>x
     </section>
 
     {{-- Produk Unggulan --}}
